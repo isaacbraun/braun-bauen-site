@@ -1,0 +1,29 @@
+<!-- TODO: fix the word count -->
+<div
+  x-data="{
+  date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+  words: $refs.content.textContent,
+  get wordCount() {
+    return this.words.trim().split(/\s+/).length;
+  }
+}"
+  class="my-8 text-lg *:my-6 print:text-sm"
+>
+  <time contenteditable="true" x-text="date">Date of Writing</time>
+
+  <p contenteditable="true">Dear Hiring Manager,</p>
+
+  <p
+    contenteditable="true"
+    x-ref="content"
+    @input="words = $refs.content.textContent"
+  >
+    <slot />
+  </p>
+
+  <p contenteditable="true">Sincerely,<br />Isaac Braun</p>
+
+  <p class="text-red-800 print:hidden">
+    Word Count: <span x-text="wordCount"></span>
+  </p>
+</div>
