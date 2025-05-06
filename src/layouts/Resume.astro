@@ -1,5 +1,5 @@
 ---
-import type { MarkdownLayoutProps } from "astro";
+import type { ResumeLayoutFrontmatter } from "../types";
 import { HashIcon, PrinterIcon } from "astro-feather";
 import { Image } from "astro:assets";
 import BaseHead from "../components/BaseHead.astro";
@@ -7,10 +7,9 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import localMark from "../images/logo/BB_Logo_Mark_Color_NoPadding.png";
 
-type Props = MarkdownLayoutProps<{
-  title: string;
-  description: string;
-}>;
+export interface Props {
+  frontmatter: ResumeLayoutFrontmatter;
+}
 
 const { frontmatter: { title, description } } = Astro.props;
 ---

@@ -1,0 +1,11 @@
+---
+import { resumeFrontmatterSchema } from "../types";
+import ResumeLayout from "../layouts/Resume.astro";
+import Content, { frontmatter } from "../content/about.mdx";
+
+const parsedFrontmatter = resumeFrontmatterSchema.parse(frontmatter);
+---
+
+<ResumeLayout frontmatter={parsedFrontmatter}>
+  <Content />
+</ResumeLayout>
