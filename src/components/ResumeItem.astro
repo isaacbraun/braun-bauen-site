@@ -18,7 +18,7 @@ const { duration, heading, desc, descAfter, link } = Astro.props;
       {
         heading && (
           <h3 class="m-0 flex flex-row flex-nowrap items-center gap-0.5">
-            <HashIcon size={18} customClasses="text-green-600" />
+            <HashIcon size={18} customClasses="text-green-600 print:size-3.5" />
             {heading}
             {link && (
               <a
@@ -29,7 +29,7 @@ const { duration, heading, desc, descAfter, link } = Astro.props;
               >
                 <ExternalLinkIcon
                   size={14}
-                  customClasses="text-current transition:colors"
+                  customClasses="text-current transition:colors print:size-3"
                 />
               </a>
             )}
