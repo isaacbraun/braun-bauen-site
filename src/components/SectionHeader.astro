@@ -1,0 +1,22 @@
+---
+interface Props {
+  id?: string;
+  padding?: "all" | "header";
+  title: string;
+}
+
+const { id, padding, title } = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={["mb-24", padding === "all" ? "px-3 sm:px-12" : ""]}
+>
+  <h2
+    class:list={[
+      padding === "header" ? "px-3 sm:px-12" : "",
+      "mb-6 rounded-xs border-b-2 border-b-green-600 pb-2 text-4xl font-extrabold tracking-wider text-balance text-gray-900 sm:text-5xl",
+    ]}
+  >{title}</h2>
+  <slot />
+</section>

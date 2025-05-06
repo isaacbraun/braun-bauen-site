@@ -1,0 +1,37 @@
+---
+import type { ResumeLayoutFrontmatter } from "../types";
+import ResumeLayout from "../layouts/Resume.astro";
+import EditableWordCount from "../components/EditableWordCount.astro";
+
+const frontmatter: ResumeLayoutFrontmatter = {
+  title: "Create a Cover Letter",
+  description: "A simple editor to create a branded cover letter.",
+};
+---
+
+<ResumeLayout frontmatter={frontmatter}>
+  <EditableWordCount>
+    As a passionate and dedicated engineer with over 2 years of front-end
+    development experience and a keen eye for details, I am excited at the
+    opportunity to [DO] for [COMPANY]
+    <br />
+    <br />
+    While I have experience with JavaScript frameworks, I ensure to utilize modern
+    HTML and CSS to the greatest extent possible before reaching for JavaScript.
+    Most of my framework experience is with Vue, highlighted by a TypeScript curriculum
+    catalog web app that provided faculty and students with critical information
+    in a filterable and intuitive interface. My React experience is noted with two
+    key projects: Iter, a weather-browsing React Native mobile app, and a complex
+    filtering and search web app for university endowments.
+    <br />
+    <br />
+    At Southern Adventist University, I utilized HTML, CSS, JavaScript, and PHP to
+    develop features within an enterprise CMS and improve accessibility and performance
+    while communicating and collaborating with stakeholders daily.
+    <br />
+    <br />
+    With my experience in front-end development, and my continual hunger to learn
+    and create incredible user experiences, I am confident I am a great fit for this
+    role. I appreciate your consideration, and anticipate the chance to [help...].
+  </EditableWordCount>
+</ResumeLayout>

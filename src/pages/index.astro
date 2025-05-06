@@ -1,49 +1,133 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import ButtonLink from "../components/ButtonLink.astro";
+import ImageCard from "../components/ImageCard.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+import catalogImage from "../images/portfolio/sau-catalog.jpg";
+import iterImage from "../images/portfolio/iter-forecasted.jpg";
+import cttcImage from "../images/portfolio/cttc-home.png";
+import quakerImage from "../images/portfolio/qew-home.jpg";
+import sauImage from "../images/portfolio/sau-endowments.jpg";
+import taxiImage from "../images/portfolio/taxi-tableau.jpg";
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main
+      class="mx-auto mt-16 min-h-screen max-w-(--breakpoint-xl) selection:bg-green-200 md:mt-32 print:mt-2"
+    >
+      <h1 class="sr-only">{SITE_TITLE}</h1>
+
+      <SectionHeader title="Who We Are" padding="all">
+        <p class="prose max-w-none">
+          Braun Bauen is a creative agency founded by software engineer and
+          creative Isaac Braun. Our mission is to build products and experiences
+          that are fast, accessible, and intuitive to use. We discovered website
+          and software development to be a fantastic pairing with our mission
+          due to its universal and flexible nature. However, as creatives, we
+          are always open to utilizing other mediums to tackle unique and
+          challenging projects. This mentality led to the selection of our brand
+          name since "bauen" means "build" in the German language, and at our
+          core, we are committed to "bauen" products with excellence and
+          innovation.
+        </p>
+        <ButtonLink
+          href="/about"
+          label="Learn about Isaac in a new page"
+          class="mt-6"
+        >
+          About Isaac
+        </ButtonLink>
+      </SectionHeader>
+
+      <SectionHeader title="What We've Done" id="work" padding="all">
+        <div class="grid auto-fill-min-[300px] gap-6">
+          <ImageCard
+            title="Curriculum Catalog"
+            subtitle="Vue.js / TypeScript Web App"
+            src={catalogImage}
+            alt="Southern Adventist University's Online Catalog System, specifically a view of all programs"
+            link="https://www.southern.edu/catalog/undergraduate.html#/programs"
+            label="Open Southern Adventist University's online catalog in a new tab"
+            lazy={false}
+          />
+          <ImageCard
+            title="Iter"
+            subtitle="Weather Browsing & Flight Planning App"
+            src={iterImage}
+            alt="A map interface with weather details from each airport displayed in a graphical format (station model)"
+            link="https://github.com/isaacbraun/Iter"
+            label="Open the Iter GitHub repository in a new tab"
+            lazy={false}
+          />
+          <ImageCard
+            title="Chattanooga Tongue Tie Center"
+            subtitle="WordPress / Flynt Website"
+            src={cttcImage}
+            alt="Chattanooga Tongue Tie Center's Website Homepage"
+            link="https://tonguetiechattanooga.com/"
+            label="Open Chattanooga Tongue Tie Center's website in a new tab"
+            lazy={false}
+          />
+          <ImageCard
+            title="Search / Filter System"
+            subtitle="React.js Web App"
+            src={sauImage}
+            alt="Southern Adventist University's Scholarship Searching and Filtering System"
+            link="https://www.southern.edu/advancement/development/named-endowments/index.html"
+            label="Open Southern Adventist University's scholarship searching and filtering system in a new tab"
+            lazy={false}
+          />
+          <ImageCard
+            title="Taxi Trip Cost / Time Dashboard"
+            subtitle="Tableau Prep / Desktop"
+            src={taxiImage}
+            alt="A Tableau Dashboard showcasing NYC Taxi Trip Data in charts and numbers"
+            link="https://bit.ly/braun-nyc-taxi"
+            label="Open the NYC Taxi Trip Dashboard in a new tab"
+            lazy={false}
+          />
+          <ImageCard
+            title="Quaker Earthcare Witness"
+            subtitle="Custom Wordpress Components"
+            src={quakerImage}
+            alt="Screenshot of Southern Adventist University's Online Catalog System"
+            link="https://quakerearthcare.org/"
+            label="Open Quaker Earthcare Witness' website in a new tab"
+            lazy={false}
+          />
+        </div>
+      </SectionHeader>
+
+      <SectionHeader title="Work With Us" id="contact" padding="all">
+        <p class="prose max-w-none">
+          From building small features to bootstrapping entire projects, we are
+          excited to take on challenges and would love to hear from you!
+          <br />
+          While we have expertise in website development, please feel free to reach
+          out with any software engineering questions or ideas.
+          <br />
+          We look forward to helping convert your ideas into efficient and user-exciting
+          experiences.
+          <br />
+          <br />
+
+          Email us at <a
+            href="mailto:contact@braunbauen.com"
+            title="Email Braun Bauen">contact@braunbauen.com</a
+          >.
+        </p>
+      </SectionHeader>
+    </main>
+    <Footer />
+  </body>
 </html>
