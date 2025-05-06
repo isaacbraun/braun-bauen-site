@@ -7,9 +7,10 @@ interface Props {
   alt: string;
   title: string;
   subtitle: string;
+  lazy?: boolean;
 }
 
-const { src, alt, title, subtitle } = Astro.props;
+const { src, alt, title, subtitle, lazy = true} = Astro.props;
 ---
 
 <Image
@@ -20,6 +21,7 @@ const { src, alt, title, subtitle } = Astro.props;
   quality={100}
   class="object-cover"
   layout="constrained"
+  priority={!lazy}
 />
 <div class="px-4 pt-3 pb-5">
   <h3 class="flex gap-1 text-lg font-semibold text-balance text-green-700">

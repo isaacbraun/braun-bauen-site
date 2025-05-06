@@ -9,9 +9,10 @@ interface Props {
   alt: string;
   title: string;
   subtitle: string;
+  lazy?: boolean;
 }
 
-const { link, label, src, alt, title, subtitle } = Astro.props;
+const { link, label, src, alt, title, subtitle, lazy } = Astro.props;
 ---
 
 {
@@ -22,11 +23,11 @@ const { link, label, src, alt, title, subtitle } = Astro.props;
       target="_blank"
       class="block h-full overflow-hidden rounded-lg border-4 border-green-200 bg-green-200 transition-[scale] hover:scale-[102%]"
     >
-      <ImageCardContent src={src} alt={alt} title={title} subtitle={subtitle} />
+      <ImageCardContent src={src} alt={alt} title={title} subtitle={subtitle} lazy={lazy} />
     </a>
   ) : (
     <div class="block h-full overflow-hidden rounded-lg border-4 border-green-200 bg-green-200">
-      <ImageCardContent src={src} alt={alt} title={title} subtitle={subtitle} />
+      <ImageCardContent src={src} alt={alt} title={title} subtitle={subtitle} lazy={lazy} />
     </div>
   )
 }
