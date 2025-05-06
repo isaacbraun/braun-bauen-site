@@ -141,39 +141,26 @@
   @apply font-mono text-white rounded-sm border border-green-700 bg-green-700 px-4 sm:px-6 h-[41px] w-fit flex items-center hover:bg-transparent hover:text-green-700 transition-colors duration-300 ease-in-out;
 }
 
-swiper-main .swiper-button-next.swiper-button-disabled,
-swiper-main .swiper-button-prev.swiper-button-disabled {
-  @apply opacity-0;
+@utility auto-fill-min-*{
+  grid-template-columns: repeat(auto-fill, minmax(min(--value([*]), 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(--value(--text-*), 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(var(--spacing)* --value(integer), 100%), 1fr));
 }
 
-@media only screen and (min-width: 450px) {
-  .swiper-wrapper {
-    mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.4) 2%,
-      rgb(0, 0, 0) 6%,
-      rgb(0, 0, 0) 94%,
-      rgba(0, 0, 0, 0.4) 98%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
-  .atBeginning > .swiper-wrapper {
-    mask-image: linear-gradient(
-      to right,
-      rgb(0, 0, 0) 0%,
-      rgb(0, 0, 0) 94%,
-      rgba(0, 0, 0, 0.4) 98%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
-  .atEnd > .swiper-wrapper {
-    mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.4) 2%,
-      rgb(0, 0, 0) 6%,
-      rgb(0, 0, 0) 100%
-    );
-  }
+@utility auto-fill-max-*{
+  grid-template-columns: repeat(auto-fill, minmax(max(--value([*]), 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(max(--value(--text-*), 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(max(var(--spacing)* --value(integer), 100%), 1fr));
+}
+
+@utility auto-fit-min-*{
+  grid-template-columns: repeat(auto-fit, minmax(min(--value([*]), 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(--value(--text-*), 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--spacing)* --value(integer), 100%), 1fr));
+}
+
+@utility auto-fit-max-*{
+  grid-template-columns: repeat(auto-fit, minmax(max(--value([*]), 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(max(--value(--text-*), 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(max(var(--spacing)* --value(integer), 100%), 1fr));
 }
