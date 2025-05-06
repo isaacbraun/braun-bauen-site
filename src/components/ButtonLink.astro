@@ -1,0 +1,23 @@
+---
+interface Props {
+href: string,
+label: string,
+variant?: 'light' | 'dark',
+class?: string,
+};
+
+const { href, label, variant, class: className } = Astro.props;
+
+let variantClass = 'button'
+
+switch (variant) {
+  case 'light':
+    variantClass = 'button-light';
+  case 'dark':
+    variantClass = 'button-dark';
+}
+---
+
+<a href={href} class:list={[variantClass, className]} aria-label={label}>
+  <slot />
+</a>

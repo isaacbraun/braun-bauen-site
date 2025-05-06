@@ -1,0 +1,32 @@
+---
+import type { ImageMetadata } from "astro";
+import ImageCardContent from "./ImageCardContent.astro";
+
+interface Props {
+  link?: string;
+  label: string;
+  src: ImageMetadata;
+  alt: string;
+  title: string;
+  subtitle: string;
+}
+
+const { link, label, src, alt, title, subtitle } = Astro.props;
+---
+
+{
+  link ? (
+    <a
+      href={link}
+      aria-label={label}
+      target="_blank"
+      class="block h-full overflow-hidden rounded-lg border-4 border-green-200 bg-green-200 transition-[scale] hover:scale-[102%]"
+    >
+      <ImageCardContent src={src} alt={alt} title={title} subtitle={subtitle} />
+    </a>
+  ) : (
+    <div class="block h-full overflow-hidden rounded-lg border-4 border-green-200 bg-green-200">
+      <ImageCardContent src={src} alt={alt} title={title} subtitle={subtitle} />
+    </div>
+  )
+}
