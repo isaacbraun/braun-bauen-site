@@ -1,0 +1,79 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import { HashIcon, PrinterIcon } from "astro-feather";
+import { Image } from "astro:assets";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import localMark from "../images/logo/BB_Logo_Mark_Color_NoPadding.png";
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  description: string;
+}>;
+
+const { frontmatter: { title, description } } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+
+  <body>
+    <Header />
+
+    <main class="prose page-container print:m-0 print:p-9">
+      <h1
+        class="mb-0 flex flex-row flex-nowrap items-center gap-0.5 print:mt-0"
+      >
+        <Image
+          class="m-0 mr-2 hidden h-fit print:my-0 print:block"
+          height={25}
+          src={localMark}
+          alt="Braun Bauen Logo Mark"
+        />
+        <HashIcon
+          customClasses="text-green-600 hidden sm:block print:hidden"
+          size={36}
+        />
+        <span class="print:hidden">{title}</span>
+        <span class="hidden print:block">Isaac Braun</span>
+        <button
+          onclick="print()"
+          aria-label="Print Resume"
+          class="button ml-auto! hidden px-4! sm:block print:hidden"
+        >
+          <span class="sr-only">Print Resume</span>
+          <PrinterIcon size={20} />
+        </button>
+      </h1>
+      <p
+        class="mt-2 rounded-xs border-b-2 border-green-600 pb-2 pl-1 text-gray-500 print:mt-0 print:pl-0"
+      >
+        <span class="print:hidden">{description}</span>
+        <span class="hidden text-gray-700 print:block">
+          <a
+            class="no-underline"
+            href="mailto:isaac@braunbauen.com"
+            title="Email Isaac">isaac@braunbauen.com</a
+          > |
+          <a
+            class="no-underline"
+            href="https://github.com/isaacbraun"
+            title="Visit Isaac's GitHub">github.com/isaacbraun</a
+          > |
+          <a
+            class="no-underline"
+            href="https://braunbauen.com"
+            title="Visit Isaac's Website">braunbauen.com</a
+          >
+        </span>
+      </p>
+      <section>
+        <slot />
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

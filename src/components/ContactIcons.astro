@@ -1,0 +1,29 @@
+---
+import { GithubIcon, LinkedinIcon, TwitterIcon, MailIcon } from "astro-feather";
+---
+
+<section class="print:hidden flex flex-row gap-3 text-gray-500">
+  <button x-data="{ message: 'Copy Email' }"
+    @click="message = 'Copied!'; navigator.clipboard.writeText('isaac@braunbauen.com');"
+    @mouseleave="message = 'Copy Email'"
+    class="text-current hover:text-green-700 transition-colors duration-300 ease-in-out has-tooltip"
+    aria-label="Copy Email to Clipboard">
+    <!-- TODO: check how screen reader understands the tooltip span - <span class="sr-only">Copy Email</span> -->
+    <!-- TODO: fix overflow on smaller screens -->
+    <span class="tooltip" x-text="message" :class="message == 'Copied!' && 'clicked'"></span>
+    <MailIcon size={16} />
+  </button>
+  <a aria-label="LinkedIn" target="_blank" href="https://www.linkedin.com/in/isaac-braun-656998235">
+    <span class="sr-only">LinkedIn</span>
+    <LinkedinIcon size={16} />
+  </a>
+  <a aria-label="GitHub" target="_blank" href="https://github.com/isaacbraun">
+    <span class="sr-only">GitHub</span>
+    <GithubIcon size={16} />
+  </a>
+  <a aria-label="X - Formerly Twitter" target="_blank" href="https://x.com/isaacbraun1">
+    <span class="sr-only">X - Formerly Twitter</span>
+    <TwitterIcon size={16} />
+  </a>
+</section>
+

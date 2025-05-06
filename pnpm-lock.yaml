@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@astrojs/alpinejs':
+        specifier: ^0.4.8
+        version: 0.4.8(@types/alpinejs@3.13.11)(alpinejs@3.14.9)
       '@astrojs/mdx':
         specifier: ^4.2.6
         version: 4.2.6(astro@5.7.10(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.1)(typescript@5.8.3))
@@ -20,14 +23,39 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.1.5
         version: 4.1.5(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
+      '@types/alpinejs':
+        specifier: ^3.13.11
+        version: 3.13.11
+      alpinejs:
+        specifier: ^3.14.9
+        version: 3.14.9
       astro:
         specifier: ^5.7.10
         version: 5.7.10(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.1)(typescript@5.8.3)
+      astro-feather:
+        specifier: ^1.0.0
+        version: 1.0.0
       tailwindcss:
         specifier: ^4.1.5
         version: 4.1.5
+    devDependencies:
+      prettier:
+        specifier: ^3.5.3
+        version: 3.5.3
+      prettier-plugin-astro:
+        specifier: ^0.14.1
+        version: 0.14.1
+      prettier-plugin-tailwindcss:
+        specifier: ^0.6.11
+        version: 0.6.11(prettier-plugin-astro@0.14.1)(prettier@3.5.3)
 
 packages:
+
+  '@astrojs/alpinejs@0.4.8':
+    resolution: {integrity: sha512-aNiJELzqunTuwXZEzqLmiTzMirvrKI4tYKauyAxZbk+Stu/xUZIgnfXeWSy87yF2l/QpnYELgNTDlFduUbp/nw==}
+    peerDependencies:
+      '@types/alpinejs': ^3.0.0
+      alpinejs: ^3.0.0
 
   '@astrojs/compiler@2.12.0':
     resolution: {integrity: sha512-7bCjW6tVDpUurQLeKBUN9tZ5kSv5qYrGmcn0sG0IwacL7isR2ZbyyA3AdZ4uxsuUFOS2SlgReTH7wkxO6zpqWA==}
@@ -568,6 +596,9 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6
 
+  '@types/alpinejs@3.13.11':
+    resolution: {integrity: sha512-3KhGkDixCPiLdL3Z/ok1GxHwLxEWqQOKJccgaQL01wc0EVM2tCTaqlC3NIedmxAXkVzt/V6VTM8qPgnOHKJ1MA==}
+
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
@@ -607,6 +638,12 @@ packages:
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
 
+  '@vue/reactivity@3.1.5':
+    resolution: {integrity: sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg==}
+
+  '@vue/shared@3.1.5':
+    resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
+
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -616,6 +653,9 @@ packages:
     resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  alpinejs@3.14.9:
+    resolution: {integrity: sha512-gqSOhTEyryU9FhviNqiHBHzgjkvtukq9tevew29fTj+ofZtfsYriw4zPirHHOAy9bw8QoL3WGhyk7QqCh5AYlw==}
 
   ansi-align@3.0.1:
     resolution: {integrity: sha512-IOfwwBF5iczOjp/WeY4YxyjqAFMQoZufdQWDd19SEExbVLNXqvpzSJ/M7Za4/sCPmQ0+GRquoA7bGcINcxew6w==}
@@ -652,6 +692,9 @@ packages:
   astring@1.9.0:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
+
+  astro-feather@1.0.0:
+    resolution: {integrity: sha512-PVIDwuKOv+sw/pqYysOVY4m77fUOYEKBn8R4l280muXXUuYZUoPRFYx8WoAigI+Yp3cKFY5pJecmtyT4RCnblA==}
 
   astro@5.7.10:
     resolution: {integrity: sha512-9TQcFZqP2w6//JXXUHfw8/5PX7KUx9EkG5O3m+hISuyeUztvjY1q5+p7+C5HiXyg24Zs3KkpieoL5BGRXGCAGA==}
@@ -1362,6 +1405,70 @@ packages:
     resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
 
+  prettier-plugin-astro@0.14.1:
+    resolution: {integrity: sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==}
+    engines: {node: ^14.15.0 || >=16.0.0}
+
+  prettier-plugin-tailwindcss@0.6.11:
+    resolution: {integrity: sha512-YxaYSIvZPAqhrrEpRtonnrXdghZg1irNg4qrjboCXrpybLWVs55cW2N3juhspVJiO0JBvYJT8SYsJpc8OQSnsA==}
+    engines: {node: '>=14.21.3'}
+    peerDependencies:
+      '@ianvs/prettier-plugin-sort-imports': '*'
+      '@prettier/plugin-pug': '*'
+      '@shopify/prettier-plugin-liquid': '*'
+      '@trivago/prettier-plugin-sort-imports': '*'
+      '@zackad/prettier-plugin-twig': '*'
+      prettier: ^3.0
+      prettier-plugin-astro: '*'
+      prettier-plugin-css-order: '*'
+      prettier-plugin-import-sort: '*'
+      prettier-plugin-jsdoc: '*'
+      prettier-plugin-marko: '*'
+      prettier-plugin-multiline-arrays: '*'
+      prettier-plugin-organize-attributes: '*'
+      prettier-plugin-organize-imports: '*'
+      prettier-plugin-sort-imports: '*'
+      prettier-plugin-style-order: '*'
+      prettier-plugin-svelte: '*'
+    peerDependenciesMeta:
+      '@ianvs/prettier-plugin-sort-imports':
+        optional: true
+      '@prettier/plugin-pug':
+        optional: true
+      '@shopify/prettier-plugin-liquid':
+        optional: true
+      '@trivago/prettier-plugin-sort-imports':
+        optional: true
+      '@zackad/prettier-plugin-twig':
+        optional: true
+      prettier-plugin-astro:
+        optional: true
+      prettier-plugin-css-order:
+        optional: true
+      prettier-plugin-import-sort:
+        optional: true
+      prettier-plugin-jsdoc:
+        optional: true
+      prettier-plugin-marko:
+        optional: true
+      prettier-plugin-multiline-arrays:
+        optional: true
+      prettier-plugin-organize-attributes:
+        optional: true
+      prettier-plugin-organize-imports:
+        optional: true
+      prettier-plugin-sort-imports:
+        optional: true
+      prettier-plugin-style-order:
+        optional: true
+      prettier-plugin-svelte:
+        optional: true
+
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+    engines: {node: '>=14'}
+    hasBin: true
+
   prismjs@1.30.0:
     resolution: {integrity: sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==}
     engines: {node: '>=6'}
@@ -1458,6 +1565,12 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
+  s.color@0.0.15:
+    resolution: {integrity: sha512-AUNrbEUHeKY8XsYr/DYpl+qk5+aM+DChopnWOPEzn8YKzOhv4l2zH6LzZms3tOZP3wwdOyc0RmTciyi46HLIuA==}
+
+  sass-formatter@0.7.9:
+    resolution: {integrity: sha512-CWZ8XiSim+fJVG0cFLStwDvft1VI7uvXdCNJYXhDvowiv+DsbD1nXLiQ4zrE5UBvj5DWZJ93cwN0NX5PMsr1Pw==}
+
   sax@1.4.1:
     resolution: {integrity: sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg==}
 
@@ -1529,6 +1642,9 @@ packages:
 
   style-to-object@1.0.8:
     resolution: {integrity: sha512-xT47I/Eo0rwJmaXC4oilDGDWLohVhR6o/xAQcPQN8q6QBuZVL8qMYL85kLmST5cPjAorwvqIA4qXTRQoYHaL6g==}
+
+  suf-log@2.5.3:
+    resolution: {integrity: sha512-KvC8OPjzdNOe+xQ4XWJV2whQA0aM1kGVczMQ8+dStAO6KfEB140JEVQ9dE76ONZ0/Ylf67ni4tILPJB41U0eow==}
 
   tailwindcss@4.1.5:
     resolution: {integrity: sha512-nYtSPfWGDiWgCkwQG/m+aX83XCwf62sBgg3bIlNiiOcggnS1x3uVRDAuyelBFL+vJdOPPCGElxv9DjHJjRHiVA==}
@@ -1803,6 +1919,11 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@astrojs/alpinejs@0.4.8(@types/alpinejs@3.13.11)(alpinejs@3.14.9)':
+    dependencies:
+      '@types/alpinejs': 3.13.11
+      alpinejs: 3.14.9
 
   '@astrojs/compiler@2.12.0': {}
 
@@ -2260,6 +2381,8 @@ snapshots:
       tailwindcss: 4.1.5
       vite: 6.3.5(jiti@2.4.2)(lightningcss@1.29.2)
 
+  '@types/alpinejs@3.13.11': {}
+
   '@types/debug@4.1.12':
     dependencies:
       '@types/ms': 2.1.0
@@ -2298,11 +2421,21 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
+  '@vue/reactivity@3.1.5':
+    dependencies:
+      '@vue/shared': 3.1.5
+
+  '@vue/shared@3.1.5': {}
+
   acorn-jsx@5.3.2(acorn@8.14.1):
     dependencies:
       acorn: 8.14.1
 
   acorn@8.14.1: {}
+
+  alpinejs@3.14.9:
+    dependencies:
+      '@vue/reactivity': 3.1.5
 
   ansi-align@3.0.1:
     dependencies:
@@ -2328,6 +2461,8 @@ snapshots:
   array-iterate@2.0.1: {}
 
   astring@1.9.0: {}
+
+  astro-feather@1.0.0: {}
 
   astro@5.7.10(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.1)(typescript@5.8.3):
     dependencies:
@@ -3464,6 +3599,20 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
+  prettier-plugin-astro@0.14.1:
+    dependencies:
+      '@astrojs/compiler': 2.12.0
+      prettier: 3.5.3
+      sass-formatter: 0.7.9
+
+  prettier-plugin-tailwindcss@0.6.11(prettier-plugin-astro@0.14.1)(prettier@3.5.3):
+    dependencies:
+      prettier: 3.5.3
+    optionalDependencies:
+      prettier-plugin-astro: 0.14.1
+
+  prettier@3.5.3: {}
+
   prismjs@1.30.0: {}
 
   prompts@2.4.2:
@@ -3653,6 +3802,12 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.40.1
       fsevents: 2.3.3
 
+  s.color@0.0.15: {}
+
+  sass-formatter@0.7.9:
+    dependencies:
+      suf-log: 2.5.3
+
   sax@1.4.1: {}
 
   semver@7.7.1: {}
@@ -3753,6 +3908,10 @@ snapshots:
   style-to-object@1.0.8:
     dependencies:
       inline-style-parser: 0.2.4
+
+  suf-log@2.5.3:
+    dependencies:
+      s.color: 0.0.15
 
   tailwindcss@4.1.5: {}
 
