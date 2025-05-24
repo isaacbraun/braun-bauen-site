@@ -3,6 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
 import { SITE_TITLE } from "../consts";
+import PostHog from "../components/posthog.astro";
 
 interface Props {
   title: string;
@@ -30,6 +31,9 @@ const { title, description, image = "/placeholder.jpg" } = Astro.props;
   href={new URL("rss.xml", Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
+
+<!-- PostHog -->
+<PostHog />
 
 <!-- Font preloads -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
