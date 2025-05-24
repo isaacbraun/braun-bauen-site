@@ -32,7 +32,7 @@ const today = new Date();
         </a>
         <button
           x-data="{ message: 'Copy Email' }"
-          @click="message = 'Copied!'; navigator.clipboard.writeText('contact@braunbauen.com');"
+          @click="message = 'Copied!'; navigator.clipboard.writeText('contact@braunbauen.com'); window.posthog.capture('Copied Email');"
           @mouseleave="message = 'Copy Email'"
           class="has-tooltip text-current transition-colors duration-300 ease-in-out hover:text-green-600"
           aria-label="Copy Email to Clipboard"
@@ -48,7 +48,7 @@ const today = new Date();
       <p class="flex items-center gap-2 sm:flex-row-reverse">
         <span>braun bauen {today.getFullYear()}</span>
         <a
-          href="https://github.com/isaacbraun/braun-bauen-hugo"
+          href="https://github.com/isaacbraun/braun-bauen-site"
           target="_blank"
           title="View this website's GitHub repository"
         >
